@@ -1,0 +1,17 @@
+@media print {
+  body {
+    background: white;
+  }
+
+  .header,
+  .footer,
+  .adsense-box,
+  .button {
+    display: none !important;
+  }
+
+  .article-detail {
+    border: none;
+    padding: 0;
+  }
+}
