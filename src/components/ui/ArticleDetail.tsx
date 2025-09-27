@@ -1,6 +1,6 @@
-import { Fragment } from 'hono/jsx'
 import type { Article } from '../../content/articles'
 import { formatDate } from '../../utils/formatDate'
+import { renderMarkdownBlock } from '../../utils/renderMarkdown'
 import { AdSense } from './AdSense'
 import { Badge } from './Badge'
 
@@ -11,6 +11,8 @@ export type ArticleDetailProps = {
 }
 
 export const ArticleDetail = ({ article, adsenseClientId, adsenseSlotId }: ArticleDetailProps) => {
+  const markdownSegments = article.content.map((block) => renderMarkdownBlock(block))
+
   return (
     <article class="article-detail">
       <header class="article-detail__header">
@@ -30,11 +32,11 @@ export const ArticleDetail = ({ article, adsenseClientId, adsenseSlotId }: Artic
         <img src={article.heroImage} alt={article.title} loading="lazy" />
       ) : null}
       <section class="article-detail__body">
-        {article.content.map((paragraph, index) => (
-          <Fragment key={`${article.id}-${index}`}>
-            <p>{paragraph}</p>
+        {markdownSegments.map((html, index) => (
+          <div key={`${article.id}-${index}`} class="article-detail__segment">
+            <div dangerouslySetInnerHTML={{ __html: html }} />
             {index === 1 ? <AdSense clientId={adsenseClientId} slotId={adsenseSlotId} /> : null}
-          </Fragment>
+          </div>
         ))}
       </section>
       

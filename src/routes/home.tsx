@@ -12,14 +12,14 @@ type AppContext = Context<AppBindings>
 export const homeHandler = (c: AppContext) => {
   const articles = getArticles()
   const hero: HeroContent = {
-    title: 'Modern Classic untuk Praktisi Cloudflare',
+    title: 'Stories Worth Sharing – Real Experiences, Honest Insights',
     subtitle:
-      'Kurasi artikel tentang Cloudflare Workers, Hono, dan arsitektur serverless dengan pengalaman membaca yang hangat dan elegan.',
+      'Discover authentic stories and lessons from real-life experiences. From everyday reflections to valuable insights, each article is written to inspire, connect, and resonate with readers who value genuine perspectives.',
     callToAction: (
       <div class="hero__actions">
-        <Button href="/#articles">Mulai membaca</Button>
+        <Button href="/#articles">Start Reading</Button>
         <Button href="/#about" variant="ghost">
-          Tentang platform
+          About platform
         </Button>
       </div>
     )
@@ -34,7 +34,7 @@ export const homeHandler = (c: AppContext) => {
   return c.render(
     <Layout hero={hero}>
       <section id="articles">
-        <h2>Artikel terbaru</h2>
+        <h2>New Article</h2>
         <div class="articles-grid">
           {articles.map((article) => (
             <ArticleCard key={article.id} article={article} />

@@ -9,3 +9,11 @@ declare global {
 export type AppBindings = {
   Bindings: CloudflareBindings
 }
+
+declare module 'markdown' {
+  type MarkdownDialect = 'Gruber' | 'Maruku'
+
+  export const markdown: {
+    toHTML: (markdownSource: string, dialect?: MarkdownDialect) => string
+  }
+}

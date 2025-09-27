@@ -17,7 +17,7 @@ export const AdSenseHead = ({ clientId }: { clientId?: string }): JSX.Element | 
 
 const FALLBACK_MESSAGE = 'Konfigurasikan ADSENSE_CLIENT_ID di wrangler.jsonc sebelum produksi.'
 
-export const AdSense = ({ clientId, slotId = '5697179922' }: AdSenseProps) => {
+export const AdSense = ({ clientId, slotId = '3062201357' }: AdSenseProps) => {
   if (!clientId) {
     return (
       <aside class="adsense-box" aria-label="Advertisement configuration reminder">

@@ -9,12 +9,12 @@ export type SocialLink = {
 }
 
 export const siteConfig = {
-  title: 'indovecation v2',
-  description: 'Article platform powered by Experience Cloud and Hono.',
+  title: 'V3 iindonesiavacation.biz.id',
+  description: 'Explore articles shaped by real journeys, personal growth, and lessons learned along the way. Honest, thoughtful, and relatable writing that invites you to reflect, learn, and find your own meaning.',
   navLinks: [
-    { label: 'Beranda', href: '/' },
-    { label: 'Artikel', href: '/#articles' },
-    { label: 'Tentang', href: '/#about' }
+    { label: 'Home', href: '/' },
+    { label: 'Article', href: '/#articles' },
+    { label: 'About Us', href: '/#about' }
   ] satisfies NavLink[],
   socials: [
     { label: 'GitHub', href: 'https://github.com/ronamay' },
